@@ -346,23 +346,58 @@ export default function GetHiredPage() {
       </section>
 
       {/* ── SKILLS STRIP ──────────────────────────────────────────────────── */}
-      <section id="skills" className="bg-[#ede9e1] border-t border-b border-black/10 py-10">
+      <section id="skills" className="bg-[#ede9e1] border-t border-b border-black/10 py-14">
         <div className="max-w-6xl mx-auto px-6 md:px-12">
-        <p className="text-xs tracking-[0.1em] uppercase text-[#7a7468] font-medium mb-4">
-          My Tech Stack
-        </p>
-        <div className="flex flex-wrap gap-2.5">
-          {['React', 'Next.js'].map((skill) => (
-            <span key={skill} className="bg-[#0d0d0d] text-[#f5f2ec] border border-[#0d0d0d] rounded-full px-4 py-2 text-sm">
-              {skill}
-            </span>
-          ))}
-          {['TypeScript', 'Tailwind CSS', 'JavaScript', 'Node.js', 'MongoDB', 'Framer Motion', 'REST APIs', 'Figma', 'HTML/CSS', 'Shadcn/UI', 'Flutter', 'Prismic', 'SQL', 'Prisma'].map((skill) => (
-            <span key={skill} className="bg-white text-[#0d0d0d] border border-black/10 rounded-full px-4 py-2 text-sm hover:border-[#ff5c35] hover:text-[#ff5c35] transition-all cursor-default">
-              {skill}
-            </span>
-          ))}
-        </div>
+          <p className="text-xs tracking-[0.1em] uppercase text-[#7a7468] font-medium mb-10">
+            My Tech Stack
+          </p>
+          <div className="flex flex-col gap-8">
+            {[
+              {
+                label: 'Core',
+                featured: ['React', 'Next.js', 'TypeScript'],
+                skills: ['JavaScript', 'HTML', 'CSS', 'Responsive Web Design', 'Cross-browser Compatibility'],
+              },
+              {
+                label: 'Frameworks & Libraries',
+                featured: ['Tailwind CSS'],
+                skills: ['Bootstrap', 'SCSS / Sass', 'Framer Motion', 'Shadcn/UI', 'Express.js'],
+              },
+              {
+                label: 'Data & Backend',
+                featured: ['Node.js', 'MongoDB'],
+                skills: ['Prisma', 'SQL', 'RESTful APIs', 'Flutter'],
+              },
+              {
+                label: 'Design & UX',
+                featured: ['Figma'],
+                skills: ['UI Design', 'UX Design', 'Prismic CMS'],
+              },
+              {
+                label: 'Workflow',
+                featured: ['Git', 'GitHub'],
+                skills: ['Agile / Scrum', 'Trello', 'GitHub Projects', 'Version Control'],
+              },
+            ].map(({ label, featured, skills }) => (
+              <div key={label} className="flex flex-col sm:flex-row sm:items-start gap-3">
+                <span className="text-[10px] tracking-[0.1em] uppercase text-[#7a7468] font-semibold w-36 flex-shrink-0 pt-2">
+                  {label}
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {featured.map((s) => (
+                    <span key={s} className="bg-[#0d0d0d] text-[#f5f2ec] rounded-full px-4 py-1.5 text-sm font-medium">
+                      {s}
+                    </span>
+                  ))}
+                  {skills.map((s) => (
+                    <span key={s} className="bg-white text-[#0d0d0d] border border-black/10 rounded-full px-4 py-1.5 text-sm hover:border-[#ff5c35] hover:text-[#ff5c35] transition-all cursor-default">
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
