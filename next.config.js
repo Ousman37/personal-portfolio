@@ -5,7 +5,16 @@ const nextConfig = {
   },
   experimental: {
     serverActions: true
-  }
+  },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/get-hired',
+        permanent: false,
+      },
+    ];
+  },
 };
 
 // eslint-disable-next-line no-undef
