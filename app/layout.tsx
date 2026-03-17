@@ -1,15 +1,24 @@
-import Header from '@/components/header';
 import './globals.css';
 
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Syne, DM_Sans } from 'next/font/google';
 import ActiveSectionContextProvider from '@/context/active-section-context';
 import { Toaster } from 'react-hot-toast';
-import Footer from '@/components/footer';
-import AppearanceChanger from '@/components/appearance-changer';
 import AppearanceContextProvider from '@/context/appearance-context';
 
 const inter = Inter({ subsets: ['latin'] });
+
+const syne = Syne({
+  subsets: ['latin'],
+  weight: ['400', '600', '700', '800'],
+  variable: '--font-syne',
+});
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  variable: '--font-dm-sans',
+});
 
 export const metadata: Metadata = {
   title: 'Ethmane Didi | Developer Portfolio',
@@ -25,17 +34,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${inter.className} bg-gray-50 text-gray-900 relative pt-28 sm:pt-36 dark:bg-gray-800 dark:text-gray-200 `}
+        className={`${inter.className} ${syne.variable} ${dmSans.variable} bg-gray-50 text-gray-900 relative dark:bg-gray-800 dark:text-gray-200`}
       >
-        <div className="bg-indigo-500/20 absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-indigo-700/30"></div>
-        <div className="bg-pink-500/20 absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-pink-700/30"></div>
         <AppearanceContextProvider>
           <ActiveSectionContextProvider>
-            <Header />
             {children}
-            <Footer />
             <Toaster position="top-right" />
-            <AppearanceChanger />
           </ActiveSectionContextProvider>
         </AppearanceContextProvider>
       </body>

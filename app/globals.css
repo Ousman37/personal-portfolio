@@ -13,3 +13,11 @@ html {
   .borderBlack {
     @apply border border-black/10;
   }
+
+@keyframes pulseGreen {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+.animate-pulse-green {
+  animation: pulseGreen 2s ease-in-out infinite;
+}

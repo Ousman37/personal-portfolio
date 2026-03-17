@@ -1,7 +1,5 @@
 "use client" //🚀
 import React from 'react';
-import dynamic from "next/dynamic";
-
 import SectionHeading from './section-heading';
 
 import { motion } from 'framer-motion';
@@ -102,7 +100,4 @@ const ContactForm = () => {
   );
 };
 
-export default dynamic (() => Promise.resolve(ContactForm), {ssr: false})
-
-
-// export default ContactForm;
+export default ContactForm;

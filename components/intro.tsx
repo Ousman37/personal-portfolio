@@ -8,7 +8,7 @@ import { HiDownload } from 'react-icons/hi';
 import { FaGithubSquare } from 'react-icons/fa';
 import { BsArrowRight, BsLinkedin } from 'react-icons/bs';
 
-import TypewriterComponent from './typewriter-component';
+import DynamicTypewriter from './dynamic-typewriter';
 import { useSectionInView } from '@/lib/hooks';
 import { useActiveSectionContext } from '@/context/active-section-context';
 
@@ -59,7 +59,7 @@ const Intro = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
       >
-        <TypewriterComponent />
+        <DynamicTypewriter />
       </motion.h1>
       <motion.p
         className="px-4 mt-4 mb-10 text-lg font-normal leading-relaxed text-gray-700 dark:text-gray-300"
