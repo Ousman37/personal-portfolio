@@ -8,7 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BsArrowRight, BsLinkedin } from 'react-icons/bs';
 import { FaGithubSquare } from 'react-icons/fa';
-import { HiDownload, HiMail, HiMenuAlt3, HiX } from 'react-icons/hi';
+import { HiMail, HiMenuAlt3, HiX } from 'react-icons/hi';
 import { projectsData } from '@/lib/data';
 
 // ── Animation variants ─────────────────────────────────────────────────────────
@@ -269,22 +269,19 @@ export default function GetHiredPage() {
           initial="initial"
           animate="animate"
         >
-          {/* Eyebrow */}
-          <motion.div variants={fadeUp} className="flex items-center gap-2 mb-6">
-            <span className="w-8 h-[2px] bg-[#ff5c35]" />
-            <span className="text-[#ff5c35] text-xs font-medium tracking-[0.12em] uppercase">
-              Available for hire
-            </span>
-          </motion.div>
+          {/* Social proof eyebrow */}
+          <motion.p variants={fadeUp} className="text-xs font-medium tracking-[0.12em] uppercase text-[#7a7468] mb-6">
+            5+ shipped products · React, Next.js, TypeScript specialist
+          </motion.p>
 
           {/* H1 */}
           <motion.h1
             variants={fadeUp}
             className="font-[family-name:var(--font-syne)] text-5xl md:text-[4.5rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#1a1a2e] mb-6"
           >
-            Find your next<br />
-            <em className="not-italic text-[#ff5c35] whitespace-nowrap">front-end</em><br />
-            partner.
+            Ship faster with a{' '}<br className="hidden md:block" />
+            <em className="not-italic text-[#ff5c35] whitespace-nowrap">front-end developer</em><br />
+            who gives a damn about craft.
           </motion.h1>
 
           {/* Subtitle */}
@@ -292,13 +289,13 @@ export default function GetHiredPage() {
             variants={fadeUp}
             className="text-lg leading-[1.7] text-[#7a7468] font-light max-w-[480px] mb-10"
           >
-            I&apos;m Ethmane — a front-end developer building fast, accessible,
-            and beautifully crafted web experiences. Let&apos;s work together
-            on your next product.
+            Five years of turning designs into production-ready React apps.
+            Whether you need a UI rebuilt, a feature shipped, or a reliable
+            dev to embed in your team — I&apos;m ready.
           </motion.p>
 
-          {/* Buttons — same pattern as intro.tsx */}
-          <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-3">
+          {/* CTA */}
+          <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
             <Link
               href="#contact"
               className="group bg-[#ff5c35] text-white px-8 py-3.5 flex items-center gap-2 rounded-full font-medium text-sm shadow-[0_4px_20px_rgba(255,92,53,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(255,92,53,0.4)] transition-all duration-300"
@@ -307,14 +304,10 @@ export default function GetHiredPage() {
               <BsArrowRight className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
-              href="/EthmaneDidi_Jr Frontend Developer-CV.pdf"
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-transparent border-[1.5px] border-[#0d0d0d] text-[#0d0d0d] px-8 py-3.5 flex items-center gap-2 rounded-full font-medium text-sm hover:bg-[#0d0d0d] hover:text-[#f5f2ec] transition-all duration-300"
+              href="#projects"
+              className="text-sm text-[#7a7468] hover:text-[#ff5c35] transition-colors underline-offset-4 hover:underline"
             >
-              Download CV
-              <HiDownload className="opacity-60" />
+              or view my work ↓
             </a>
           </motion.div>
         </motion.div>
