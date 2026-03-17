@@ -195,9 +195,10 @@ export default function GetHiredPage() {
         <div className="flex items-center justify-between px-6 md:px-12 py-4 max-w-6xl mx-auto">
           <a
             href="#hero"
-            className="font-[family-name:var(--font-syne)] font-extrabold text-lg tracking-tight text-[#0d0d0d] hover:text-[#ff5c35] transition-colors"
+            className="font-[family-name:var(--font-syne)] font-extrabold text-lg tracking-tight text-[#0d0d0d] hover:text-[#ff5c35] transition-colors flex items-center gap-1"
           >
-            Ethmane Didi
+            <span className="text-[#ff5c35]">&lt;/&gt;</span>
+            Ethmane.dev
           </a>
 
           {/* Desktop links */}
@@ -279,10 +280,10 @@ export default function GetHiredPage() {
           {/* H1 */}
           <motion.h1
             variants={fadeUp}
-            className="font-[family-name:var(--font-syne)] text-5xl md:text-[4.5rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#1a1a2e] mb-6"
+            className="font-[family-name:var(--font-syne)] text-5xl md:text-[4.5rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#1a1a2e] mb-6"
           >
-            Find your next{' '}
-            <em className="not-italic text-[#ff5c35]">front-end</em>{' '}
+            Find your next<br />
+            <em className="not-italic text-[#ff5c35] whitespace-nowrap">front-end</em><br />
             partner.
           </motion.h1>
 
