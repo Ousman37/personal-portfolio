@@ -276,8 +276,8 @@ export default function GetHiredPage() {
       </nav>
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
-      <section id="hero" className="min-h-screen bg-[#f5f2ec] relative overflow-hidden">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center pt-[120px] pb-20 px-6 md:px-12 gap-16">
+      <section id="hero" className="bg-[#f5f2ec] relative overflow-hidden">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center pt-[110px] md:pt-[140px] pb-20 md:pb-28 px-6 md:px-12 gap-10 md:gap-16">
 
         {/* Background blob */}
         <div className="absolute -top-32 -right-16 w-[600px] h-[600px] rounded-full bg-[#ff5c35]/10 blur-3xl pointer-events-none" />
@@ -335,7 +335,7 @@ export default function GetHiredPage() {
         {/* RIGHT — photo card */}
         <motion.div {...fadeUp} transition={fadeUpTransition} className="relative flex justify-center md:block order-first md:order-last">
           <div
-            className="relative rounded-3xl overflow-hidden w-[260px] h-[320px] md:w-full md:h-[520px] shadow-[0_24px_64px_rgba(0,0,0,0.10)]"
+            className="relative rounded-3xl overflow-hidden w-[260px] h-[340px] md:w-full md:aspect-[4/5] shadow-[0_24px_64px_rgba(0,0,0,0.10)]"
             style={{ background: 'linear-gradient(135deg, #ede9e1 0%, #e8e2d8 100%)' }}
           >
             <Image
