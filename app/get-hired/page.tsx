@@ -212,7 +212,7 @@ export default function GetHiredPage() {
 
       {/* ── NAVBAR ────────────────────────────────────────────────────────── */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#f5f2ec]/90 backdrop-blur-md border-b border-black/10">
-        <div className="flex items-center justify-between px-6 md:px-12 py-4 max-w-6xl mx-auto">
+        <div className="flex items-center justify-between px-6 md:px-8 lg:px-12 py-4 max-w-screen-xl mx-auto">
           <a
             href="#hero"
             className="font-[family-name:var(--font-syne)] font-extrabold text-lg tracking-tight text-[#0d0d0d] hover:text-[#ff5c35] transition-colors flex items-center gap-1"
@@ -277,7 +277,7 @@ export default function GetHiredPage() {
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
       <section id="hero" className="bg-[#f5f2ec] relative overflow-hidden">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center pt-[110px] md:pt-[140px] pb-20 md:pb-28 px-6 md:px-12 gap-10 md:gap-16">
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_420px] items-center pt-[110px] md:pt-[140px] pb-20 md:pb-28 px-6 md:px-8 lg:px-12 gap-10 md:gap-12">
 
         {/* Background blob */}
         <div className="absolute -top-32 -right-16 w-[600px] h-[600px] rounded-full bg-[#ff5c35]/10 blur-3xl pointer-events-none" />
@@ -361,7 +361,7 @@ export default function GetHiredPage() {
 
       {/* ── SKILLS STRIP ──────────────────────────────────────────────────── */}
       <section id="skills" className="bg-[#ede9e1] border-t border-b border-black/10 py-14">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
+        <div className="max-w-screen-xl mx-auto px-6 md:px-8 lg:px-12">
           <p className="text-xs tracking-[0.1em] uppercase text-[#7a7468] font-medium mb-10">
             My Tech Stack
           </p>
@@ -417,7 +417,7 @@ export default function GetHiredPage() {
 
       {/* ── SERVICES ──────────────────────────────────────────────────────── */}
       <section id="services" className="bg-[#f5f2ec] py-24">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
+        <div className="max-w-screen-xl mx-auto px-6 md:px-8 lg:px-12">
           <div className="flex items-center gap-2.5 mb-3">
             <span className="w-5 h-[1.5px] bg-[#7a7468]" />
             <span className="text-xs tracking-[0.12em] uppercase text-[#7a7468] font-medium">What I do</span>
@@ -450,7 +450,7 @@ export default function GetHiredPage() {
 
       {/* ── PROJECTS ──────────────────────────────────────────────────────── */}
       <section id="projects" className="bg-[#1a1a2e] py-24">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
+        <div className="max-w-screen-xl mx-auto px-6 md:px-8 lg:px-12">
           <div className="flex items-center gap-2.5 mb-3">
             <span className="w-5 h-[1.5px] bg-white/30" />
             <span className="text-xs tracking-[0.12em] uppercase text-white/40 font-medium">Selected work</span>
@@ -470,7 +470,7 @@ export default function GetHiredPage() {
 
       {/* ── ROLES ─────────────────────────────────────────────────────────── */}
       <section id="roles" className="bg-[#ede9e1] py-24">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
+        <div className="max-w-screen-xl mx-auto px-6 md:px-8 lg:px-12">
           <div className="flex items-center gap-2.5 mb-3">
             <span className="w-5 h-[1.5px] bg-[#7a7468]" />
             <span className="text-xs tracking-[0.12em] uppercase text-[#7a7468] font-medium">Roles I&apos;m open to</span>
@@ -507,7 +507,7 @@ export default function GetHiredPage() {
 
       {/* ── PROCESS ───────────────────────────────────────────────────────── */}
       <section id="process" className="bg-[#f5f2ec] py-24">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
+        <div className="max-w-screen-xl mx-auto px-6 md:px-8 lg:px-12">
           <div className="flex items-center gap-2.5 mb-3">
             <span className="w-5 h-[1.5px] bg-[#7a7468]" />
             <span className="text-xs tracking-[0.12em] uppercase text-[#7a7468] font-medium">How it works</span>
@@ -534,7 +534,7 @@ export default function GetHiredPage() {
 
       {/* ── CONTACT ───────────────────────────────────────────────────────── */}
       <section id="contact" className="bg-[#1a1a2e] py-24">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
+        <div className="max-w-screen-xl mx-auto px-6 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 items-start">
 
           {/* LEFT */}
@@ -696,7 +696,7 @@ export default function GetHiredPage() {
 
       {/* ── FOOTER ────────────────────────────────────────────────────────── */}
       <footer className="bg-[#0d0d0d] py-10">
-        <div className="max-w-6xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="max-w-screen-xl mx-auto px-6 md:px-8 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-sm text-white/50">
           &copy; 2025 Ethmane Didi. All rights reserved.
         </p>
