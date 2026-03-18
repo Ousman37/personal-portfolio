@@ -10,6 +10,7 @@ import { BsArrowRight, BsLinkedin } from 'react-icons/bs';
 import { FaGithubSquare } from 'react-icons/fa';
 import { HiMail, HiMenuAlt3, HiX } from 'react-icons/hi';
 import { projectsData } from '@/lib/data';
+import { sendEmail } from '@/server/sendEmail';
 
 // ── Animation variants ─────────────────────────────────────────────────────────
 
@@ -172,16 +173,35 @@ export default function GetHiredPage() {
     name: '', email: '', company: '', role: '', message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!formData.name || !formData.email || !formData.role) {
       alert('Please fill in Name, Email, and Role.');
       return;
     }
-    // TODO: connect to EmailJS or Formspree here
-    // EmailJS: emailjs.sendForm("SERVICE_ID", "TEMPLATE_ID", formRef.current, "PUBLIC_KEY")
-    // Formspree: fetch("https://formspree.io/f/YOUR_ID", { method:"POST", body: JSON.stringify(formData) })
-    console.log('Form submitted:', formData);
+
+    setSending(true);
+    setSendError(null);
+
+    const body = new FormData();
+    body.append('senderName', formData.name);
+    body.append('senderEmail', formData.email);
+    body.append(
+      'message',
+      `Role: ${formData.role}${formData.company ? `\nCompany: ${formData.company}` : ''}\n\n${formData.message}`,
+    );
+
+    const result = await sendEmail(body);
+
+    setSending(false);
+
+    if (result.error) {
+      setSendError(result.error);
+      return;
+    }
+
     setSubmitted(true);
     setFormData({ name: '', email: '', company: '', role: '', message: '' });
     setTimeout(() => setSubmitted(false), 5000);
@@ -654,12 +674,20 @@ export default function GetHiredPage() {
               </div>
             )}
 
+            {/* Error message */}
+            {sendError && (
+              <div className="flex items-center gap-3 bg-red-500/15 border border-red-500/30 rounded-xl px-5 py-4 text-red-300 text-sm">
+                ⚠️&nbsp; {sendError}
+              </div>
+            )}
+
             {/* Submit */}
             <button
               onClick={handleSubmit}
-              className="self-start bg-[#ff5c35] text-white rounded-full px-9 py-4 text-sm font-medium shadow-[0_4px_20px_rgba(255,92,53,0.4)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(255,92,53,0.5)] transition-all duration-300"
+              disabled={sending}
+              className="self-start bg-[#ff5c35] text-white rounded-full px-9 py-4 text-sm font-medium shadow-[0_4px_20px_rgba(255,92,53,0.4)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(255,92,53,0.5)] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
             >
-              Send Message →
+              {sending ? 'Sending…' : 'Send Message →'}
             </button>
           </div>
         </div>
