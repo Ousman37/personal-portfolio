@@ -264,7 +264,7 @@ export default function GetHiredPage() {
 
         {/* LEFT — text */}
         <motion.div
-          className="flex flex-col"
+          className="flex flex-col min-w-0"
           variants={{ animate: { transition: { staggerChildren: 0.15 } } }}
           initial="initial"
           animate="animate"
@@ -277,10 +277,10 @@ export default function GetHiredPage() {
           {/* H1 */}
           <motion.h1
             variants={fadeUp}
-            className="font-[family-name:var(--font-syne)] text-5xl md:text-[4.5rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#1a1a2e] mb-6"
+            className="font-[family-name:var(--font-syne)] text-4xl md:text-[3.5rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#1a1a2e] mb-6"
           >
-            Ship faster with a{' '}<br className="hidden md:block" />
-            <em className="not-italic text-[#ff5c35] whitespace-nowrap">front-end developer</em><br />
+            Ship faster with a{' '}
+            <em className="not-italic text-[#ff5c35]">front-end developer</em>{' '}
             who gives a damn about craft.
           </motion.h1>
 
