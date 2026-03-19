@@ -281,9 +281,39 @@ export default function GetHiredPage() {
         className="relative overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #f5f2ec 0%, #fdf0ea 50%, #fde8dc 100%)' }}
       >
-        {/* Ambient glow blobs */}
-        <div className="absolute top-[-80px] right-[-60px] w-[520px] h-[520px] rounded-full bg-[#ff5c35]/[0.12] blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-[-60px] left-[-80px] w-[400px] h-[400px] rounded-full bg-[#ffb347]/[0.10] blur-[80px] pointer-events-none" />
+        {/* Layer 1 — radial glow top-right (near image) */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 70% 60% at 80% 10%, rgba(255,92,53,0.18) 0%, transparent 70%)',
+          }}
+        />
+
+        {/* Layer 2 — soft ambient blob bottom-left */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 50% 40% at 10% 90%, rgba(255,179,71,0.13) 0%, transparent 65%)',
+          }}
+        />
+
+        {/* Layer 3 — vignette (edges darker than center) */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, rgba(30,20,10,0.07) 100%)',
+          }}
+        />
+
+        {/* Layer 4 — grain / noise texture */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.035]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")`,
+            backgroundRepeat: 'repeat',
+            backgroundSize: '200px 200px',
+          }}
+        />
 
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_400px] items-center pt-[110px] md:pt-[140px] pb-24 md:pb-32 px-6 md:px-8 lg:px-12 gap-12 md:gap-16">
 
