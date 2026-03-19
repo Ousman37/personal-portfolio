@@ -1,4 +1,4 @@
-"use server" //😊🖥️ server-side
+"use server" //😊🖥️ server-side server/sendEmail.ts
 import { Resend } from "resend";
 import { getErrorMessage, validateString } from "@/lib/utils";
 import ContactFormEmail from "@/email/contact-form-email";
@@ -23,7 +23,7 @@ export const sendEmail = async (formData: FormData) => {
   }
 
   // Validate strings
-  if (!validateString(senderName, 10)) {
+  if (!validateString(senderName, 100)) {
     return { error: "Invalid sender name" };
   }
   if (!validateString(senderEmail, 500)) {
