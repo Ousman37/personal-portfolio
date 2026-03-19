@@ -122,7 +122,7 @@ function BentoCard({ project, i, className = '', accent = '#1e1e2e', featured = 
         <div className="w-11 h-11 rounded-xl bg-white/[0.08] flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-white/[0.14] transition-colors">
           {icons[i]}
         </div>
-        <span className="font-[family-name:var(--font-syne)] text-[10px] font-bold tracking-[0.12em] text-white/25">
+        <span className="font-[family-name:var(--font-bricolage)] text-[10px] font-bold tracking-[0.12em] text-white/25">
           {String(i + 1).padStart(2, '0')}
         </span>
       </div>
@@ -140,7 +140,7 @@ function BentoCard({ project, i, className = '', accent = '#1e1e2e', featured = 
             />
           </div>
         )}
-        <h3 className="font-[family-name:var(--font-syne)] font-bold text-white leading-snug mb-2 group-hover:text-[#ff5c35] transition-colors"
+        <h3 className="font-[family-name:var(--font-bricolage)] font-bold text-white leading-snug mb-2 group-hover:text-[#ff5c35] transition-colors"
           style={{ fontSize: featured ? '1.25rem' : '1rem' }}
         >
           {project.title}
@@ -215,7 +215,7 @@ export default function GetHiredPage() {
         <div className="flex items-center justify-between px-6 md:px-8 lg:px-12 py-4 max-w-screen-xl mx-auto">
           <a
             href="#hero"
-            className="font-[family-name:var(--font-syne)] font-extrabold text-lg tracking-tight text-[#0d0d0d] hover:text-[#ff5c35] transition-colors flex items-center gap-1"
+            className="font-[family-name:var(--font-bricolage)] font-extrabold text-lg tracking-tight text-[#0d0d0d] hover:text-[#ff5c35] transition-colors flex items-center gap-1"
           >
             <span className="text-[#ff5c35]">&lt;/&gt;</span>
             Ethmane.dev
@@ -335,7 +335,7 @@ export default function GetHiredPage() {
             {/* H1 */}
             <motion.h1
               variants={fadeUp}
-              className="font-[family-name:var(--font-syne)] text-[2.6rem] md:text-[3.4rem] lg:text-[3.8rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-[#1a1a2e] mb-7"
+              className="font-[family-name:var(--font-bricolage)] text-[2.6rem] md:text-[3.4rem] lg:text-[3.8rem] font-extrabold leading-[1.08] tracking-[-0.02em] text-[#1a1a2e] mb-7"
             >
               Ship faster with a{' '}
               <em
@@ -446,7 +446,7 @@ export default function GetHiredPage() {
             <span className="w-5 h-[1.5px] bg-[#7a7468]" />
             <span className="text-xs tracking-[0.12em] uppercase text-[#7a7468] font-medium">My Tech Stack</span>
           </div>
-          <h2 className="font-[family-name:var(--font-syne)] text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#1a1a2e] mb-12">
+          <h2 className="font-[family-name:var(--font-bricolage)] text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#1a1a2e] mb-12">
             Tools I work with every day
           </h2>
 
@@ -503,7 +503,7 @@ export default function GetHiredPage() {
                   <span className="w-9 h-9 rounded-xl bg-[#f5f2ec] flex items-center justify-center text-lg flex-shrink-0">
                     {icon}
                   </span>
-                  <span className="font-[family-name:var(--font-syne)] text-sm font-bold text-[#1a1a2e] tracking-tight">
+                  <span className="font-[family-name:var(--font-bricolage)] text-sm font-bold text-[#1a1a2e] tracking-tight">
                     {label}
                   </span>
                 </div>
@@ -538,7 +538,7 @@ export default function GetHiredPage() {
             <span className="w-5 h-[1.5px] bg-[#7a7468]" />
             <span className="text-xs tracking-[0.12em] uppercase text-[#7a7468] font-medium">What I do</span>
           </div>
-          <h2 className="font-[family-name:var(--font-syne)] text-4xl md:text-5xl font-bold tracking-[-0.03em] text-[#1a1a2e] mb-16 max-w-xl leading-[1.15]">
+          <h2 className="font-[family-name:var(--font-bricolage)] text-4xl md:text-5xl font-bold tracking-[-0.03em] text-[#1a1a2e] mb-16 max-w-xl leading-[1.15]">
             Services I offer to your team
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y-2 md:divide-y-0 md:divide-x-2 divide-black/10">
@@ -549,9 +549,9 @@ export default function GetHiredPage() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-[#f5f2ec] hover:bg-[#ede9e1] transition-colors p-10 md:p-12"
               >
-                <p className="font-[family-name:var(--font-syne)] text-xs font-bold tracking-[0.08em] text-[#ff5c35] mb-7">{s.num}</p>
+                <p className="font-[family-name:var(--font-bricolage)] text-xs font-bold tracking-[0.08em] text-[#ff5c35] mb-7">{s.num}</p>
                 <div className="text-4xl mb-5">{s.icon}</div>
-                <h3 className="font-[family-name:var(--font-syne)] text-xl font-bold text-[#0d0d0d] mb-3.5">{s.title}</h3>
+                <h3 className="font-[family-name:var(--font-bricolage)] text-xl font-bold text-[#0d0d0d] mb-3.5">{s.title}</h3>
                 <p className="text-sm leading-[1.7] text-[#7a7468]">{s.desc}</p>
                 <div className="flex flex-wrap gap-2 mt-6">
                   {s.tags.map((t) => (
@@ -571,7 +571,7 @@ export default function GetHiredPage() {
             <span className="w-5 h-[1.5px] bg-white/30" />
             <span className="text-xs tracking-[0.12em] uppercase text-white/40 font-medium">Selected work</span>
           </div>
-          <h2 className="font-[family-name:var(--font-syne)] text-4xl md:text-5xl font-bold tracking-[-0.03em] text-white mb-16 max-w-xl leading-[1.15]">
+          <h2 className="font-[family-name:var(--font-bricolage)] text-4xl md:text-5xl font-bold tracking-[-0.03em] text-white mb-16 max-w-xl leading-[1.15]">
             Projects I&apos;ve built
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 md:auto-rows-[260px]">
@@ -591,7 +591,7 @@ export default function GetHiredPage() {
             <span className="w-5 h-[1.5px] bg-[#7a7468]" />
             <span className="text-xs tracking-[0.12em] uppercase text-[#7a7468] font-medium">Roles I&apos;m open to</span>
           </div>
-          <h2 className="font-[family-name:var(--font-syne)] text-4xl md:text-5xl font-bold tracking-[-0.03em] text-[#1a1a2e] mb-0 max-w-xl leading-[1.15]">
+          <h2 className="font-[family-name:var(--font-bricolage)] text-4xl md:text-5xl font-bold tracking-[-0.03em] text-[#1a1a2e] mb-0 max-w-xl leading-[1.15]">
             Where I can add value
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-12">
@@ -607,7 +607,7 @@ export default function GetHiredPage() {
               >
                 <div className="w-[52px] h-[52px] rounded-xl bg-[#f5f2ec] flex items-center justify-center text-2xl flex-shrink-0">{r.icon}</div>
                 <div>
-                  <h3 className="font-[family-name:var(--font-syne)] text-base font-bold text-[#0d0d0d] mb-1.5">{r.title}</h3>
+                  <h3 className="font-[family-name:var(--font-bricolage)] text-base font-bold text-[#0d0d0d] mb-1.5">{r.title}</h3>
                   <p className="text-sm text-[#7a7468] leading-[1.6]">{r.desc}</p>
                   <div className="flex flex-wrap gap-2 mt-3">
                     {r.types.map((t) => (
@@ -628,7 +628,7 @@ export default function GetHiredPage() {
             <span className="w-5 h-[1.5px] bg-[#7a7468]" />
             <span className="text-xs tracking-[0.12em] uppercase text-[#7a7468] font-medium">How it works</span>
           </div>
-          <h2 className="font-[family-name:var(--font-syne)] text-4xl md:text-5xl font-bold tracking-[-0.03em] text-[#1a1a2e] mb-0 max-w-xl leading-[1.15]">
+          <h2 className="font-[family-name:var(--font-bricolage)] text-4xl md:text-5xl font-bold tracking-[-0.03em] text-[#1a1a2e] mb-0 max-w-xl leading-[1.15]">
             From first message to shipped product
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 mt-16 divide-x divide-black/10">
@@ -639,8 +639,8 @@ export default function GetHiredPage() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="p-6 md:p-9"
               >
-                <p className="font-[family-name:var(--font-syne)] text-7xl font-extrabold text-[#0d0d0d]/[0.06] leading-none mb-4 select-none">{s.num}</p>
-                <h3 className="font-[family-name:var(--font-syne)] text-base font-bold text-[#0d0d0d] mb-2.5">{s.title}</h3>
+                <p className="font-[family-name:var(--font-bricolage)] text-7xl font-extrabold text-[#0d0d0d]/[0.06] leading-none mb-4 select-none">{s.num}</p>
+                <h3 className="font-[family-name:var(--font-bricolage)] text-base font-bold text-[#0d0d0d] mb-2.5">{s.title}</h3>
                 <p className="text-sm leading-[1.6] text-[#7a7468]">{s.desc}</p>
               </motion.div>
             ))}
@@ -659,7 +659,7 @@ export default function GetHiredPage() {
               <span className="w-5 h-[1.5px] bg-white/30" />
               <span className="text-xs tracking-[0.12em] uppercase text-white/40 font-medium">Get in touch</span>
             </div>
-            <h2 className="font-[family-name:var(--font-syne)] text-4xl md:text-5xl font-bold tracking-[-0.03em] text-white mb-6 leading-[1.1]">
+            <h2 className="font-[family-name:var(--font-bricolage)] text-4xl md:text-5xl font-bold tracking-[-0.03em] text-white mb-6 leading-[1.1]">
               Let&apos;s build something{' '}
               <em className="not-italic text-[#ff5c35]">great</em> together.
             </h2>

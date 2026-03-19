@@ -1,7 +1,7 @@
 import './globals.css';
 
 import type { Metadata } from 'next';
-import { Inter, Syne, DM_Sans } from 'next/font/google';
+import { Inter, Syne, DM_Sans, Bricolage_Grotesque } from 'next/font/google';
 import ActiveSectionContextProvider from '@/context/active-section-context';
 import { Toaster } from 'react-hot-toast';
 import AppearanceContextProvider from '@/context/appearance-context';
@@ -20,6 +20,12 @@ const dmSans = DM_Sans({
   variable: '--font-dm-sans',
 });
 
+const bricolage = Bricolage_Grotesque({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-bricolage',
+});
+
 export const metadata: Metadata = {
   title: 'Ethmane Didi | Developer Portfolio',
   description:
@@ -34,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${inter.className} ${syne.variable} ${dmSans.variable} bg-gray-50 text-gray-900 relative dark:bg-gray-800 dark:text-gray-200`}
+        className={`${inter.className} ${syne.variable} ${dmSans.variable} ${bricolage.variable} bg-gray-50 text-gray-900 relative dark:bg-gray-800 dark:text-gray-200`}
       >
         <AppearanceContextProvider>
           <ActiveSectionContextProvider>
