@@ -276,86 +276,134 @@ export default function GetHiredPage() {
       </nav>
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
-      <section id="hero" className="bg-[#f5f2ec] relative overflow-hidden">
-      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_420px] items-center pt-[110px] md:pt-[140px] pb-20 md:pb-28 px-6 md:px-8 lg:px-12 gap-10 md:gap-12">
+      <section
+        id="hero"
+        className="relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #f5f2ec 0%, #fdf0ea 50%, #fde8dc 100%)' }}
+      >
+        {/* Ambient glow blobs */}
+        <div className="absolute top-[-80px] right-[-60px] w-[520px] h-[520px] rounded-full bg-[#ff5c35]/[0.12] blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-[-60px] left-[-80px] w-[400px] h-[400px] rounded-full bg-[#ffb347]/[0.10] blur-[80px] pointer-events-none" />
 
-        {/* Background blob */}
-        <div className="absolute -top-32 -right-16 w-[600px] h-[600px] rounded-full bg-[#ff5c35]/10 blur-3xl pointer-events-none" />
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_400px] items-center pt-[110px] md:pt-[140px] pb-24 md:pb-32 px-6 md:px-8 lg:px-12 gap-12 md:gap-16">
 
-        {/* LEFT — text */}
-        <motion.div
-          className="flex flex-col min-w-0"
-          variants={{ animate: { transition: { staggerChildren: 0.15 } } }}
-          initial="initial"
-          animate="animate"
-        >
-          {/* Social proof eyebrow */}
-          <motion.p variants={fadeUp} className="text-xs font-medium tracking-[0.12em] uppercase text-[#7a7468] mb-6">
-            5+ shipped products · React, Next.js, TypeScript specialist
-          </motion.p>
-
-          {/* H1 */}
-          <motion.h1
-            variants={fadeUp}
-            className="font-[family-name:var(--font-syne)] text-4xl md:text-[3.5rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#1a1a2e] mb-6"
+          {/* LEFT — text */}
+          <motion.div
+            className="flex flex-col min-w-0"
+            variants={{ animate: { transition: { staggerChildren: 0.13 } } }}
+            initial="initial"
+            animate="animate"
           >
-            Ship faster with a{' '}
-            <em className="not-italic text-[#ff5c35]">front-end developer</em>{' '}
-            who gives a damn about craft.
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p
-            variants={fadeUp}
-            className="text-lg leading-[1.7] text-[#7a7468] font-light max-w-[480px] mb-10"
-          >
-            Five years of turning designs into production-ready React apps.
-            Whether you need a UI rebuilt, a feature shipped, or a reliable
-            dev to embed in your team — I&apos;m ready.
-          </motion.p>
-
-          {/* CTA */}
-          <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
-            <Link
-              href="#contact"
-              className="group bg-[#ff5c35] text-white px-8 py-3.5 flex items-center gap-2 rounded-full font-medium text-sm shadow-[0_4px_20px_rgba(255,92,53,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(255,92,53,0.4)] transition-all duration-300"
-            >
-              Get in Touch
-              <BsArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <a
-              href="#projects"
-              className="text-sm text-[#7a7468] hover:text-[#ff5c35] transition-colors underline-offset-4 hover:underline"
-            >
-              or view my work ↓
-            </a>
-          </motion.div>
-        </motion.div>
-
-        {/* RIGHT — photo card */}
-        <motion.div {...fadeUp} transition={fadeUpTransition} className="relative flex justify-center md:block order-first md:order-last">
-          <div
-            className="relative rounded-3xl overflow-hidden w-[260px] h-[340px] md:w-full md:aspect-[4/5] shadow-[0_24px_64px_rgba(0,0,0,0.10)]"
-            style={{ background: 'linear-gradient(135deg, #ede9e1 0%, #e8e2d8 100%)' }}
-          >
-            <Image
-              src="/ousman.png"
-              alt="Ethmane Didi"
-              fill
-              className="object-cover object-top"
-              sizes="(max-width: 768px) 260px, 580px"
-              priority
-            />
-            {/* Floating badge */}
-            <div className="absolute bottom-6 left-6 bg-white flex items-center gap-3 shadow-[0_8px_32px_rgba(0,0,0,0.12)]" style={{ borderRadius: 14, padding: '14px 18px' }}>
-              <span className="w-2.5 h-2.5 rounded-full bg-green-500 flex-shrink-0 animate-pulse-green" />
-              <span className="text-[#0d0d0d] text-sm font-medium">
-                Open to work
-                <span className="text-[#7a7468] font-normal"> · Remote &amp; On-site</span>
+            {/* Eyebrow */}
+            <motion.div variants={fadeUp} className="flex items-center gap-2.5 mb-7">
+              <span className="inline-flex items-center gap-2 bg-white/70 backdrop-blur-sm border border-black/[0.08] rounded-full px-4 py-1.5 text-xs font-medium text-[#3a3530] shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#ff5c35]" />
+                5+ shipped products · React, Next.js, TypeScript
               </span>
+            </motion.div>
+
+            {/* H1 */}
+            <motion.h1
+              variants={fadeUp}
+              className="font-[family-name:var(--font-syne)] text-[2.6rem] md:text-[3.4rem] lg:text-[3.8rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-[#1a1a2e] mb-7"
+            >
+              Ship faster with a{' '}
+              <em
+                className="not-italic"
+                style={{
+                  background: 'linear-gradient(90deg, #ff5c35 0%, #ff8c42 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
+                front-end developer
+              </em>{' '}
+              who cares about craft.
+            </motion.h1>
+
+            {/* Subtitle */}
+            <motion.p
+              variants={fadeUp}
+              className="text-[1.05rem] leading-[1.75] text-[#6b6560] font-light max-w-[460px] mb-10"
+            >
+              Five years of turning designs into production-ready React apps.
+              Whether you need a UI rebuild, a feature shipped, or a reliable
+              dev to embed in your team — I&apos;m ready.
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
+              <Link
+                href="#contact"
+                className="group relative bg-[#ff5c35] text-white px-8 py-3.5 flex items-center gap-2.5 rounded-full font-semibold text-sm overflow-hidden transition-all duration-300 hover:-translate-y-0.5"
+                style={{ boxShadow: '0 4px 24px rgba(255,92,53,0.35)' }}
+                onMouseEnter={(e) => (e.currentTarget.style.boxShadow = '0 8px 40px rgba(255,92,53,0.5)')}
+                onMouseLeave={(e) => (e.currentTarget.style.boxShadow = '0 4px 24px rgba(255,92,53,0.35)')}
+              >
+                Get in Touch
+                <BsArrowRight className="group-hover:translate-x-1 transition-transform duration-200" />
+              </Link>
+              <a
+                href="#projects"
+                className="group flex items-center gap-2 bg-white/70 backdrop-blur-sm border border-black/[0.10] text-[#1a1a2e] px-7 py-3.5 rounded-full font-medium text-sm hover:border-[#ff5c35]/40 hover:bg-white transition-all duration-300 shadow-sm"
+              >
+                View My Work
+                <span className="group-hover:translate-y-0.5 transition-transform duration-200 inline-block">↓</span>
+              </a>
+            </motion.div>
+          </motion.div>
+
+          {/* RIGHT — profile card */}
+          <motion.div
+            {...fadeUp}
+            transition={fadeUpTransition}
+            className="relative flex justify-center md:justify-end order-first md:order-last"
+          >
+            {/* Outer glow ring */}
+            <div
+              className="absolute inset-[-12px] rounded-[2.5rem] pointer-events-none"
+              style={{ background: 'radial-gradient(ellipse at 60% 40%, rgba(255,92,53,0.15) 0%, transparent 70%)' }}
+            />
+
+            {/* Card */}
+            <div
+              className="relative w-[300px] md:w-full max-w-[380px] rounded-[2rem] overflow-hidden border border-white/60"
+              style={{
+                background: 'linear-gradient(145deg, rgba(255,255,255,0.75) 0%, rgba(255,240,232,0.60) 100%)',
+                backdropFilter: 'blur(20px)',
+                boxShadow: '0 32px 80px rgba(0,0,0,0.12), 0 0 0 1px rgba(255,255,255,0.5) inset',
+              }}
+            >
+              {/* Inner image area */}
+              <div className="relative mx-6 mt-6 rounded-2xl overflow-hidden aspect-[4/5]"
+                style={{ background: 'linear-gradient(160deg, #ede9e1 0%, #e8ddd4 100%)' }}>
+                <Image
+                  src="/ousman.png"
+                  alt="Ethmane Didi"
+                  fill
+                  className="object-cover object-top"
+                  sizes="380px"
+                  priority
+                />
+              </div>
+
+              {/* Card footer with badge */}
+              <div className="flex items-center justify-center py-5">
+                <div
+                  className="inline-flex items-center gap-2.5 bg-white/90 backdrop-blur-md rounded-full px-5 py-2.5 border border-black/[0.06]"
+                  style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}
+                >
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
+                  </span>
+                  <span className="text-[#0d0d0d] text-sm font-medium">Open to work</span>
+                  <span className="text-[#9a9490] text-sm">· Remote &amp; On-site</span>
+                </div>
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
         </div>
       </section>
 
