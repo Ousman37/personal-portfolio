@@ -405,6 +405,12 @@ export default function GetHiredPage() {
                 featured: ['Git', 'GitHub'],
                 skills: ['Agile / Scrum', 'Trello', 'GitHub Projects', 'Version Control'],
               },
+              {
+                icon: '🧪',
+                label: 'Testing & Quality',
+                featured: ['Jest', 'React Testing Library'],
+                skills: ['ESLint', 'Prettier', 'Lighthouse', 'Web Accessibility'],
+              },
             ].map(({ icon, label, featured, skills }, i) => (
               <motion.div
                 key={label}
