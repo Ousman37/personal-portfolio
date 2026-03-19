@@ -359,57 +359,89 @@ export default function GetHiredPage() {
         </div>
       </section>
 
-      {/* ── SKILLS STRIP ──────────────────────────────────────────────────── */}
-      <section id="skills" className="bg-[#ede9e1] border-t border-b border-black/10 py-14">
+      {/* ── SKILLS ─────────────────────────────────────────────────────────── */}
+      <section id="skills" className="bg-[#ede9e1] border-t border-b border-black/10 py-20">
         <div className="max-w-screen-xl mx-auto px-6 md:px-8 lg:px-12">
-          <p className="text-xs tracking-[0.1em] uppercase text-[#7a7468] font-medium mb-10">
-            My Tech Stack
-          </p>
-          <div className="flex flex-col gap-8">
+
+          {/* Header */}
+          <div className="flex items-center gap-2.5 mb-3">
+            <span className="w-5 h-[1.5px] bg-[#7a7468]" />
+            <span className="text-xs tracking-[0.12em] uppercase text-[#7a7468] font-medium">My Tech Stack</span>
+          </div>
+          <h2 className="font-[family-name:var(--font-syne)] text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#1a1a2e] mb-12">
+            Tools I work with every day
+          </h2>
+
+          {/* Cards grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               {
+                icon: '⚛️',
                 label: 'Core',
                 featured: ['React', 'Next.js', 'TypeScript'],
-                skills: ['JavaScript', 'HTML', 'CSS', 'Responsive Web Design', 'Cross-browser Compatibility'],
+                skills: ['JavaScript', 'HTML', 'CSS', 'Responsive Design', 'Cross-browser'],
               },
               {
+                icon: '🎨',
                 label: 'Frameworks & Libraries',
-                featured: ['Tailwind CSS'],
-                skills: ['Bootstrap', 'SCSS / Sass', 'Framer Motion', 'Shadcn/UI', 'Express.js'],
+                featured: ['Tailwind CSS', 'Framer Motion'],
+                skills: ['Bootstrap', 'SCSS / Sass', 'Shadcn/UI', 'Express.js'],
               },
               {
+                icon: '🗄️',
                 label: 'Data & Backend',
                 featured: ['Node.js', 'MongoDB'],
                 skills: ['Prisma', 'SQL', 'RESTful APIs', 'Flutter'],
               },
               {
+                icon: '✏️',
                 label: 'Design & UX',
                 featured: ['Figma'],
                 skills: ['UI Design', 'UX Design', 'Prismic CMS'],
               },
               {
+                icon: '⚙️',
                 label: 'Workflow',
                 featured: ['Git', 'GitHub'],
                 skills: ['Agile / Scrum', 'Trello', 'GitHub Projects', 'Version Control'],
               },
-            ].map(({ label, featured, skills }) => (
-              <div key={label} className="flex flex-col sm:flex-row sm:items-start gap-3">
-                <span className="text-[10px] tracking-[0.1em] uppercase text-[#7a7468] font-semibold w-36 flex-shrink-0 pt-2">
-                  {label}
-                </span>
-                <div className="flex flex-wrap gap-2">
+            ].map(({ icon, label, featured, skills }, i) => (
+              <motion.div
+                key={label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.07 }}
+                className="bg-white rounded-2xl p-6 border border-black/[0.06] hover:border-[#ff5c35]/30 hover:shadow-[0_8px_32px_rgba(0,0,0,0.07)] transition-all duration-300"
+              >
+                {/* Card header */}
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="w-9 h-9 rounded-xl bg-[#f5f2ec] flex items-center justify-center text-lg flex-shrink-0">
+                    {icon}
+                  </span>
+                  <span className="font-[family-name:var(--font-syne)] text-sm font-bold text-[#1a1a2e] tracking-tight">
+                    {label}
+                  </span>
+                </div>
+
+                {/* Featured */}
+                <div className="flex flex-wrap gap-2 mb-3">
                   {featured.map((s) => (
-                    <span key={s} className="bg-[#0d0d0d] text-[#f5f2ec] rounded-full px-4 py-1.5 text-sm font-medium">
-                      {s}
-                    </span>
-                  ))}
-                  {skills.map((s) => (
-                    <span key={s} className="bg-white text-[#0d0d0d] border border-black/10 rounded-full px-4 py-1.5 text-sm hover:border-[#ff5c35] hover:text-[#ff5c35] transition-all cursor-default">
+                    <span key={s} className="bg-[#0d0d0d] text-[#f5f2ec] rounded-full px-3.5 py-1 text-xs font-semibold">
                       {s}
                     </span>
                   ))}
                 </div>
-              </div>
+
+                {/* Secondary */}
+                <div className="flex flex-wrap gap-1.5">
+                  {skills.map((s) => (
+                    <span key={s} className="bg-[#f5f2ec] text-[#3a3530] rounded-full px-3 py-1 text-xs border border-black/[0.07] hover:border-[#ff5c35] hover:text-[#ff5c35] transition-colors cursor-default">
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
