@@ -88,7 +88,7 @@ export const projectsData = [
     tags: ['Flutter', 'iOS', 'Dart', 'App Store'],
     imageUrl: wishlishlyImg,
     liveDemoLink: 'https://github.com/Ousman37/wishlishly',
-    githubLink: 'https://github.com/Ousman37/wishlishly',
+    githubLink: 'git@github.com:Ousman37/wishlist-app.git',
   },
   {
     title: 'BeUnique — E-Commerce Store',
