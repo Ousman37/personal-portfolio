@@ -96,8 +96,8 @@ export const projectsData = [
       'A clean, fully responsive e-commerce storefront built with React and styled-components. Features product browsing, a shopping cart, and validated checkout forms using react-hook-form and Yup. Routing handled with React Router for a seamless SPA experience.',
     tags: ['React', 'React Router', 'styled-components', 'react-hook-form'],
     imageUrl: reUniqueImg,
-    liveDemoLink: 'https://github.com/Ousman37/re-unique',
-    githubLink: 'https://github.com/Ousman37/re-unique',
+    liveDemoLink: 'https://react-ecom-store-psi.vercel.app/',
+    githubLink: 'git@github.com:Ousman37/react-ecom-store.git',
   },
 ] as const;
 
