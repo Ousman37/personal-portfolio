@@ -6,6 +6,7 @@ import bidspaceImg from '@/public/bidspace.png';
 import frvFroovaImg from '@/public/frv-froova.png';
 import datalensImg from '@/public/datalens.png';
 import wishlishlyImg from '@/public/wishlishly.png';
+import reUniqueImg from '@/public/re-unique.png';
 
 export const links = [
   {
@@ -88,6 +89,15 @@ export const projectsData = [
     imageUrl: wishlishlyImg,
     liveDemoLink: 'https://github.com/Ousman37/wishlishly',
     githubLink: 'https://github.com/Ousman37/wishlishly',
+  },
+  {
+    title: 'BeUnique — E-Commerce Store',
+    description:
+      'A clean, fully responsive e-commerce storefront built with React and styled-components. Features product browsing, a shopping cart, and validated checkout forms using react-hook-form and Yup. Routing handled with React Router for a seamless SPA experience.',
+    tags: ['React', 'React Router', 'styled-components', 'react-hook-form'],
+    imageUrl: reUniqueImg,
+    liveDemoLink: 'https://github.com/Ousman37/re-unique',
+    githubLink: 'https://github.com/Ousman37/re-unique',
   },
 ] as const;
 

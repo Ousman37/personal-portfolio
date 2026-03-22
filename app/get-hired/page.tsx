@@ -567,12 +567,16 @@ export default function GetHiredPage() {
             Projects I&apos;ve built
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:auto-rows-[320px]">
+            {/* Row 1: wide + tall */}
             {projectsData[0] && <BentoCard project={projectsData[0]} i={0} className="md:col-span-2" featured />}
             {projectsData[1] && <BentoCard project={projectsData[1]} i={1} className="md:col-span-1" />}
+            {/* Row 2: single + wide */}
             {projectsData[2] && <BentoCard project={projectsData[2]} i={2} className="md:col-span-1" />}
-            {projectsData[3] && <BentoCard project={projectsData[3]} i={3} className="md:col-span-1" />}
-            {projectsData[4] && <BentoCard project={projectsData[4]} i={4} className="md:col-span-2" featured />}
+            {projectsData[3] && <BentoCard project={projectsData[3]} i={3} className="md:col-span-2" featured />}
+            {/* Row 3: three equal */}
+            {projectsData[4] && <BentoCard project={projectsData[4]} i={4} className="md:col-span-1" />}
             {projectsData[5] && <BentoCard project={projectsData[5]} i={5} className="md:col-span-1" />}
+            {projectsData[6] && <BentoCard project={projectsData[6]} i={6} className="md:col-span-1" />}
           </div>
         </div>
       </section>
