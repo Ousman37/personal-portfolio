@@ -1,10 +1,11 @@
 import React from 'react';
 import { LuGraduationCap } from 'react-icons/lu';
-import JavaScriptFrameworksImg from '@/public/js_ca.png';
-import mollifyImg from '@/public/mollify.png';
-import SemesterProjectImg from '@/public/proj2.png';
-import vacationExplorerImg from '@/public/vacation-explorer.png';
-import dashboardSideProjectImg from "@/public/dashboard-sideproject.png" 
+import focusflowImg from '@/public/focusflow.png';
+import voyageiqImg from '@/public/voyageiq.png';
+import bidspaceImg from '@/public/bidspace.png';
+import frvFroovaImg from '@/public/frv-froova.png';
+import datalensImg from '@/public/datalens.png';
+import wishlishlyImg from '@/public/wishlishly.png';
 
 export const links = [
   {
@@ -39,7 +40,7 @@ export const projectsData = [
     description:
       'A full-featured productivity web app inspired by the Hyperfocus method. Two focus modes: deep work timer with distraction blocking, and a free-form idea capture journal. Includes mood tracking, habit streaks, badges, and a freemium pricing model.',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Authentication'],
-    imageUrl: mollifyImg,
+    imageUrl: focusflowImg,
     liveDemoLink: 'https://focusflow-app.vercel.app/',
     githubLink: 'https://github.com/Ousman37/focusflow',
   },
@@ -48,7 +49,7 @@ export const projectsData = [
     description:
       'A travel planning app featuring curated luxury property listings with rich photography, location filters, and live weather and country data. Users browse destinations like Paris, Switzerland, and Amsterdam with real-time information to plan their perfect trip.',
     tags: ['Next.js', 'TypeScript', 'REST APIs', 'API Integration'],
-    imageUrl: vacationExplorerImg,
+    imageUrl: voyageiqImg,
     liveDemoLink: 'https://vacation-explorer.vercel.app/',
     githubLink: 'https://github.com/Ousman37/VacationExplorer',
   },
@@ -57,7 +58,7 @@ export const projectsData = [
     description:
       'A fully functional auction web app where users register, list items, and compete in real-time bidding. Features a credit-based economy, user authentication, curated listings, and a clean responsive layout designed to build trust around every bid.',
     tags: ['JavaScript', 'HTML/CSS', 'Responsive Design', 'Authentication'],
-    imageUrl: SemesterProjectImg,
+    imageUrl: bidspaceImg,
     liveDemoLink: 'https://visionary-sprite-8c6f10.netlify.app/',
     githubLink: 'https://github.com/Ousman37/auction-platform-sp2',
   },
@@ -66,7 +67,7 @@ export const projectsData = [
     description:
       'A bold product marketing site for a probiotic soda brand. Built with Next.js and powered by Prismic CMS. Features product showcases, flavor browsing, subscription pricing, and a vibrant design system that perfectly matches the brand identity.',
     tags: ['Next.js', 'Prismic CMS', 'TypeScript', 'E-Commerce'],
-    imageUrl: JavaScriptFrameworksImg,
+    imageUrl: frvFroovaImg,
     liveDemoLink: 'https://frv-froova.vercel.app/',
     githubLink: 'https://github.com/Ousman37/frv-froova',
   },
@@ -75,7 +76,7 @@ export const projectsData = [
     description:
       'A full-stack analytics dashboard with a dark UI featuring colorful KPI cards, real-time line charts, and pie chart breakdowns. Built to visualize and explore datasets in an intuitive, data-dense interface backed by a Node.js/MongoDB API.',
     tags: ['React', 'Express.js', 'MongoDB', 'Recharts'],
-    imageUrl: dashboardSideProjectImg,
+    imageUrl: datalensImg,
     liveDemoLink: 'https://dashboard-app-plum-five.vercel.app/',
     githubLink: 'https://github.com/Ousman37/dashboard-app',
   },
@@ -84,7 +85,7 @@ export const projectsData = [
     description:
       'A native iOS app built with Flutter that lets users create, organize, and share wishlists with friends and family. Features a clean UI, real-time list sharing, and a seamless experience across devices. Currently pending Apple App Store review.',
     tags: ['Flutter', 'iOS', 'Dart', 'App Store'],
-    imageUrl: mollifyImg,
+    imageUrl: wishlishlyImg,
     liveDemoLink: 'https://github.com/Ousman37/wishlishly',
     githubLink: 'https://github.com/Ousman37/wishlishly',
   },

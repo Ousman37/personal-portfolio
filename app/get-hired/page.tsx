@@ -95,12 +95,10 @@ type BentoCardProps = {
   project: typeof projectsData[number];
   i: number;
   className?: string;
-  accent?: string;
   featured?: boolean;
 };
 
-function BentoCard({ project, i, className = '', accent = '#1e1e2e', featured = false }: BentoCardProps) {
-  const icons = ['🌐', '🛒', '📚', '🏖️', '📊'];
+function BentoCard({ project, i, className = '', featured = false }: BentoCardProps) {
   return (
     <motion.a
       href={project.liveDemoLink}
@@ -108,59 +106,54 @@ function BentoCard({ project, i, className = '', accent = '#1e1e2e', featured = 
       rel="noopener noreferrer"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -4, boxShadow: '0 24px 64px rgba(0,0,0,0.4)' }}
+      whileHover={{ y: -6 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: i * 0.08, ease: 'easeOut' }}
-      className={`group relative flex flex-col justify-between rounded-2xl border border-white/[0.08] overflow-hidden cursor-pointer transition-all duration-300 hover:border-white/20 p-7 min-h-[220px] ${className}`}
-      style={{ background: accent }}
+      transition={{ duration: 0.4, delay: i * 0.07, ease: 'easeOut' }}
+      className={`group relative flex flex-col justify-end rounded-2xl overflow-hidden cursor-pointer border border-white/[0.08] hover:border-white/20 transition-all duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_24px_64px_rgba(0,0,0,0.5)] ${className}`}
     >
-      {/* Subtle noise texture overlay */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuNjUiIG51bU9jdGF2ZXM9IjMiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48ZmVDb2xvck1hdHJpeCB0eXBlPSJzYXR1cmF0ZSIgdmFsdWVzPSIwIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIGZpbHRlcj0idXJsKCNub2lzZSkiIG9wYWNpdHk9IjAuMDQiLz48L3N2Zz4=')] opacity-60 pointer-events-none" />
+      {/* Screenshot — fills the whole card */}
+      <Image
+        src={project.imageUrl}
+        alt={project.title}
+        fill
+        className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      />
 
-      {/* Top row: icon + index badge */}
-      <div className="flex items-start justify-between relative z-10">
-        <div className="w-11 h-11 rounded-xl bg-white/[0.08] flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-white/[0.14] transition-colors">
-          {icons[i]}
-        </div>
-        <span className="font-[family-name:var(--font-bricolage)] text-[10px] font-bold tracking-[0.12em] text-white/25">
-          {String(i + 1).padStart(2, '0')}
-        </span>
-      </div>
+      {/* Gradient overlay — stronger at bottom for text legibility */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/10 group-hover:from-black/90 group-hover:via-black/40 transition-all duration-500" />
 
-      {/* Bottom: title + description + tags */}
-      <div className="relative z-10 mt-6">
-        {featured && (
-          <div className="relative h-28 rounded-xl overflow-hidden mb-4 bg-black/20">
-            <Image
-              src={project.imageUrl}
-              alt={project.title}
-              fill
-              className="object-cover object-top opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
-              sizes="400px"
-            />
-          </div>
-        )}
-        <h3 className="font-[family-name:var(--font-bricolage)] font-bold text-white leading-snug mb-2 group-hover:text-[#ff5c35] transition-colors"
-          style={{ fontSize: featured ? '1.25rem' : '1rem' }}
-        >
-          {project.title}
-        </h3>
-        <p className="text-xs text-white/45 leading-[1.65] line-clamp-2 mb-4">
-          {project.description}
-        </p>
-        <div className="flex flex-wrap gap-1.5">
-          {project.tags.slice(0, 3).map((tag) => (
-            <span key={tag} className="bg-white/[0.07] text-white/50 text-[10px] px-2 py-0.5 rounded-full border border-white/[0.06]">
+      {/* Index badge — top right */}
+      <span className="absolute top-4 right-4 z-10 text-[10px] font-bold tracking-[0.12em] text-white/30 font-[family-name:var(--font-bricolage)]">
+        {String(i + 1).padStart(2, '0')}
+      </span>
+
+      {/* Content — pinned to bottom */}
+      <div className="relative z-10 p-5 md:p-6">
+        {/* Tags */}
+        <div className="flex flex-wrap gap-1.5 mb-3">
+          {project.tags.slice(0, featured ? 4 : 3).map((tag) => (
+            <span key={tag} className="bg-white/10 backdrop-blur-sm text-white/60 text-[10px] font-medium px-2.5 py-0.5 rounded-full border border-white/[0.08]">
               {tag}
             </span>
           ))}
         </div>
-      </div>
 
-      {/* Arrow — appears on hover */}
-      <span className="absolute bottom-6 right-6 text-white/20 group-hover:text-[#ff5c35] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 text-lg z-10">
-        ↗
-      </span>
+        {/* Title */}
+        <h3 className={`font-[family-name:var(--font-bricolage)] font-bold text-white leading-snug group-hover:text-[#ff8c42] transition-colors duration-300 ${featured ? 'text-xl md:text-2xl' : 'text-base md:text-lg'}`}>
+          {project.title}
+        </h3>
+
+        {/* Description — slides in on hover */}
+        <p className="text-xs text-white/50 leading-[1.7] mt-1.5 line-clamp-2 max-h-0 overflow-hidden group-hover:max-h-20 transition-all duration-500">
+          {project.description}
+        </p>
+
+        {/* CTA link */}
+        <div className="flex items-center gap-1 mt-3 text-[#ff5c35] text-xs font-semibold opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+          View project <span className="text-base leading-none">↗</span>
+        </div>
+      </div>
     </motion.a>
   );
 }
@@ -573,13 +566,13 @@ export default function GetHiredPage() {
           <h2 className="font-[family-name:var(--font-bricolage)] text-4xl md:text-5xl font-bold tracking-[-0.03em] text-white mb-16 max-w-xl leading-[1.15]">
             Projects I&apos;ve built
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:auto-rows-[280px]">
-            {projectsData[0] && <BentoCard project={projectsData[0]} i={0} className="md:col-span-2" accent="#1e2435" featured />}
-            {projectsData[1] && <BentoCard project={projectsData[1]} i={1} className="md:col-span-1" accent="#1e2a1e" />}
-            {projectsData[2] && <BentoCard project={projectsData[2]} i={2} className="md:col-span-1" accent="#2a1f3d" />}
-            {projectsData[3] && <BentoCard project={projectsData[3]} i={3} className="md:col-span-1" accent="#2a1a1a" />}
-            {projectsData[4] && <BentoCard project={projectsData[4]} i={4} className="md:col-span-2" accent="#1a1e2a" featured />}
-            {projectsData[5] && <BentoCard project={projectsData[5]} i={5} className="md:col-span-1" accent="#1a2a2a" />}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:auto-rows-[320px]">
+            {projectsData[0] && <BentoCard project={projectsData[0]} i={0} className="md:col-span-2" featured />}
+            {projectsData[1] && <BentoCard project={projectsData[1]} i={1} className="md:col-span-1" />}
+            {projectsData[2] && <BentoCard project={projectsData[2]} i={2} className="md:col-span-1" />}
+            {projectsData[3] && <BentoCard project={projectsData[3]} i={3} className="md:col-span-1" />}
+            {projectsData[4] && <BentoCard project={projectsData[4]} i={4} className="md:col-span-2" featured />}
+            {projectsData[5] && <BentoCard project={projectsData[5]} i={5} className="md:col-span-1" />}
           </div>
         </div>
       </section>
