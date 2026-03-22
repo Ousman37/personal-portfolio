@@ -35,70 +35,58 @@ export const links = [
 
 export const projectsData = [
   {
-    title: 'Semester Project 2',
-    description: 'An online auction platform...',
-    tags: [
-      'Online Auctions',
-      'User Registration',
-      'Credit System',
-      'Listing Management',
-    ],
-    imageUrl: SemesterProjectImg,
-    liveDemoLink: 'https://visionary-sprite-8c6f10.netlify.app/',
-    githubLink: 'https://github.com/Ousman37/auction-platform-sp2',
-  },
-  {
-    title: 'JavaScript Frameworks CA',
+    title: 'FocusFlow — Productivity SaaS',
     description:
-      'A dynamic e-commerce platform built using React and Tailwind CSS. Users can explore job listings, apply filters, and make purchases...',
-    tags: ['React', 'JavaScript', 'Tailwind'],
-    imageUrl: JavaScriptFrameworksImg,
-    liveDemoLink: 'https://github.com/Ousman37/react-ecom-store',
-    githubLink: 'https://chic-rugelach-72313f.netlify.app/',
-  },
-  {
-    title: 'Project Exam 2 (Mollify)',
-    description:
-      'Mollify is a Learning Management System (LMS) enhancing markdown content management with content search, bookmarking, text-to-speech, an AI assistant, and an intuitive markdown editor...',
-    tags: [
-      'LMS',
-      'CLI',
-      'Text-to-Speech',
-      'AI Assistant',
-      'Markdown Editor',
-      'Monorepo',
-    ],
+      'A full-featured productivity web app inspired by the Hyperfocus method. Two focus modes: deep work timer with distraction blocking, and a free-form idea capture journal. Includes mood tracking, habit streaks, badges, and a freemium pricing model.',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Authentication'],
     imageUrl: mollifyImg,
-    liveDemoLink: 'https://example.com/live-demo-link',
-    githubLink: 'https://github.com/Fermain/-mollify/tree/master',
+    liveDemoLink: 'https://focusflow-app.vercel.app/',
+    githubLink: 'https://github.com/Ousman37/focusflow',
   },
   {
-    title: 'My Vacation App',
+    title: 'VoyageIQ — Luxury Travel Explorer',
     description:
-      'A web application for planning and managing vacations. Built with Next.js, TypeScript, and integrates with various APIs for features like weather forecasts and country information...',
-    tags: ['Next.js', 'TypeScript', 'API Integration'],
+      'A travel planning app featuring curated luxury property listings with rich photography, location filters, and live weather and country data. Users browse destinations like Paris, Switzerland, and Amsterdam with real-time information to plan their perfect trip.',
+    tags: ['Next.js', 'TypeScript', 'REST APIs', 'API Integration'],
     imageUrl: vacationExplorerImg,
     liveDemoLink: 'https://vacation-explorer.vercel.app/',
     githubLink: 'https://github.com/Ousman37/VacationExplorer',
   },
   {
-    title: 'Cutting-Edge Data Dashboard App',
+    title: 'BidSpace — Online Auction Platform',
     description:
-      'Dive into data exploration with our React.js, Express.js, and MongoDB-powered dashboard...',
-    tags: [
-      'React.js',
-      'Express.js',
-      'MongoDB',
-      'Data Visualization',
-      'Chart.js',
-      'Recharts',
-      'API Integration',
-      'Mongoose',
-      'Axios',
-    ],
+      'A fully functional auction web app where users register, list items, and compete in real-time bidding. Features a credit-based economy, user authentication, curated listings, and a clean responsive layout designed to build trust around every bid.',
+    tags: ['JavaScript', 'HTML/CSS', 'Responsive Design', 'Authentication'],
+    imageUrl: SemesterProjectImg,
+    liveDemoLink: 'https://visionary-sprite-8c6f10.netlify.app/',
+    githubLink: 'https://github.com/Ousman37/auction-platform-sp2',
+  },
+  {
+    title: 'FRV Froova — Brand & E-Commerce',
+    description:
+      'A bold product marketing site for a probiotic soda brand. Built with Next.js and powered by Prismic CMS. Features product showcases, flavor browsing, subscription pricing, and a vibrant design system that perfectly matches the brand identity.',
+    tags: ['Next.js', 'Prismic CMS', 'TypeScript', 'E-Commerce'],
+    imageUrl: JavaScriptFrameworksImg,
+    liveDemoLink: 'https://frv-froova.vercel.app/',
+    githubLink: 'https://github.com/Ousman37/frv-froova',
+  },
+  {
+    title: 'DataLens — Analytics Dashboard',
+    description:
+      'A full-stack analytics dashboard with a dark UI featuring colorful KPI cards, real-time line charts, and pie chart breakdowns. Built to visualize and explore datasets in an intuitive, data-dense interface backed by a Node.js/MongoDB API.',
+    tags: ['React', 'Express.js', 'MongoDB', 'Recharts'],
     imageUrl: dashboardSideProjectImg,
     liveDemoLink: 'https://dashboard-app-plum-five.vercel.app/',
     githubLink: 'https://github.com/Ousman37/dashboard-app',
+  },
+  {
+    title: 'Wishlishly — iOS Wishlist App',
+    description:
+      'A native iOS app built with Flutter that lets users create, organize, and share wishlists with friends and family. Features a clean UI, real-time list sharing, and a seamless experience across devices. Currently pending Apple App Store review.',
+    tags: ['Flutter', 'iOS', 'Dart', 'App Store'],
+    imageUrl: mollifyImg,
+    liveDemoLink: 'https://github.com/Ousman37/wishlishly',
+    githubLink: 'https://github.com/Ousman37/wishlishly',
   },
 ] as const;
 

@@ -328,7 +328,7 @@ export default function GetHiredPage() {
             <motion.div variants={fadeUp} className="flex items-center gap-2.5 mb-7">
               <span className="inline-flex items-center gap-2 bg-white/70 backdrop-blur-sm border border-black/[0.08] rounded-full px-4 py-1.5 text-xs font-medium text-[#3a3530] shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#ff5c35]" />
-                5+ shipped products · React, Next.js, TypeScript
+                5 solo-shipped apps · 800 daily users pre-launch
               </span>
             </motion.div>
 
@@ -337,7 +337,7 @@ export default function GetHiredPage() {
               variants={fadeUp}
               className="font-[family-name:var(--font-bricolage)] text-[2.6rem] md:text-[3.4rem] lg:text-[3.8rem] font-extrabold leading-[1.08] tracking-[-0.02em] text-[#1a1a2e] mb-7"
             >
-              Ship faster with a{' '}
+              Five apps shipped{' '}
               <em
                 className="not-italic"
                 style={{
@@ -347,9 +347,9 @@ export default function GetHiredPage() {
                   backgroundClip: 'text',
                 }}
               >
-                front-end developer
+                solo.
               </em>{' '}
-              who cares about craft.
+              One hit 800 users before launch.
             </motion.h1>
 
             {/* Subtitle */}
@@ -357,9 +357,8 @@ export default function GetHiredPage() {
               variants={fadeUp}
               className="text-[1.05rem] leading-[1.75] text-[#6b6560] font-light max-w-[460px] mb-10"
             >
-              Five years of turning designs into production-ready React apps.
-              Whether you need a UI rebuild, a feature shipped, or a reliable
-              dev to embed in your team — I&apos;m ready.
+              Auth, payments, real-time data — built alone, end to end.
+              Now ready to build yours.
             </motion.p>
 
             {/* CTAs */}
@@ -574,12 +573,13 @@ export default function GetHiredPage() {
           <h2 className="font-[family-name:var(--font-bricolage)] text-4xl md:text-5xl font-bold tracking-[-0.03em] text-white mb-16 max-w-xl leading-[1.15]">
             Projects I&apos;ve built
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 md:auto-rows-[260px]">
-            {projectsData[0] && <BentoCard project={projectsData[0]} i={0} className="md:col-span-1 md:row-span-1" accent="#2a1f3d" />}
-            {projectsData[1] && <BentoCard project={projectsData[1]} i={1} className="md:col-span-1 md:row-span-2" accent="#1e2a1e" featured />}
-            {projectsData[2] && <BentoCard project={projectsData[2]} i={2} className="md:col-span-1 md:row-span-1" accent="#1e1e2e" />}
-            {projectsData[3] && <BentoCard project={projectsData[3]} i={3} className="md:col-span-1 md:row-span-1" accent="#2a2a1a" />}
-            {projectsData[4] && <BentoCard project={projectsData[4]} i={4} className="md:col-span-1 md:row-span-1" accent="#1a2a2a" />}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:auto-rows-[280px]">
+            {projectsData[0] && <BentoCard project={projectsData[0]} i={0} className="md:col-span-2" accent="#1e2435" featured />}
+            {projectsData[1] && <BentoCard project={projectsData[1]} i={1} className="md:col-span-1" accent="#1e2a1e" />}
+            {projectsData[2] && <BentoCard project={projectsData[2]} i={2} className="md:col-span-1" accent="#2a1f3d" />}
+            {projectsData[3] && <BentoCard project={projectsData[3]} i={3} className="md:col-span-1" accent="#2a1a1a" />}
+            {projectsData[4] && <BentoCard project={projectsData[4]} i={4} className="md:col-span-2" accent="#1a1e2a" featured />}
+            {projectsData[5] && <BentoCard project={projectsData[5]} i={5} className="md:col-span-1" accent="#1a2a2a" />}
           </div>
         </div>
       </section>
