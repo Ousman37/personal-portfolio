@@ -7,6 +7,7 @@ import frvFroovaImg from '@/public/frv-froova.png';
 import datalensImg from '@/public/datalens.png';
 import wishlishlyImg from '@/public/wishlishly.png';
 import reUniqueImg from '@/public/re-unique.png';
+import mollifyImg from '@/public/mollify.png';
 
 export const links = [
   {
@@ -89,6 +90,15 @@ export const projectsData = [
     imageUrl: wishlishlyImg,
     liveDemoLink: 'https://github.com/Ousman37/wishlishly',
     githubLink: 'git@github.com:Ousman37/wishlist-app.git',
+  },
+  {
+    title: 'Mollify — Open-Source Learning Platform',
+    description:
+      'Contributed to an open-source learning platform built for Noroff students. I implemented the text-to-speech feature in TypeScript, enabling students to listen to course content directly in the browser — improving accessibility and overall learning experience.',
+    tags: ['SvelteKit', 'TypeScript', 'Tailwind CSS', 'Skeleton UI', 'OpenAI'],
+    imageUrl: mollifyImg,
+    liveDemoLink: 'https://mollify.noroff.dev',
+    githubLink: '',
   },
   {
     title: 'BeUnique — E-Commerce Store',
