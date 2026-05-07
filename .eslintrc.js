@@ -26,8 +26,9 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'react'],
   rules: {
-    'react/react-in-jsx-scope': 'off', // Add this line
-    'react/jsx-uses-react': 'off', // Add this line if you get unused React import warning
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-uses-react': 'off',
+    'react/prop-types': 'off',
   },
   settings: {
     react: {

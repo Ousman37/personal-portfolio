@@ -1,8 +1,9 @@
 //components/project.tsx
-'use client'; //🚀
+'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
+import { FiExternalLink, FiGithub } from 'react-icons/fi';
 
 type ProjectProps = {
   title: string;
@@ -20,7 +21,7 @@ const Project: React.FC<ProjectProps> = ({
   githubLink,
   imageUrl,
   tags,
-}: ProjectProps) => {
+}) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -34,59 +35,70 @@ const Project: React.FC<ProjectProps> = ({
   return (
     <motion.div
       ref={ref}
-      style={{
-        scale: scaleProgress,
-        opacity: opacityProgress,
-      }}
-      className="group mb-3 sm:mb-8 last:mb-0 transition-transform duration-300 ease-in-out transform hover:scale-105 "
+      style={{ scale: scaleProgress, opacity: opacityProgress }}
+      className="group h-full"
     >
-      <section className="bg-gray-100 rounded-lg shadow-lg sm:max-w-xl p-5 sm:p-10 mx-auto hover:bg-gray-200 transition dark:bg-white/10 dark:hover:bg-white/20">
-        <Image
-          src={imageUrl}
-          alt={`Screenshot of ${title}`}
-          width={208}
-          height={208}
-          quality={95}
-          className="w-full h-[13rem] object-cover portfolio-card__image"
-        />
+      <div className="flex flex-col h-full rounded-2xl overflow-hidden border border-gray-200/60 dark:border-white/10 bg-white dark:bg-white/5 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+        {/* Image */}
+        <div className="relative overflow-hidden h-52 shrink-0 bg-gray-100 dark:bg-white/10">
+          <Image
+            src={imageUrl}
+            alt={`Screenshot of ${title}`}
+            fill
+            quality={90}
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
 
-        <div>
-          <h3 className="text-2xl font-semibold portfolio-card__title">
+        {/* Body */}
+        <div className="flex flex-col flex-1 p-6 gap-4">
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white leading-snug">
             {title}
           </h3>
-          <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70 portfolio-card__text">
+
+          <p className="text-sm leading-relaxed text-gray-600 dark:text-white/65 flex-1">
             {description}
           </p>
-          <ul className="flex flex-wrap mt-4 gap-2">
+
+          {/* Tags */}
+          <ul className="flex flex-wrap gap-2">
             {tags.map((tag, index) => (
               <li
-                className="bg-gray-200 rounded-full px-2 py-1 text-sm text-gray-600 mr-2 "
                 key={index}
+                className="text-xs font-medium px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 border border-indigo-100 dark:border-indigo-500/20"
               >
                 {tag}
               </li>
             ))}
           </ul>
-          <div className="mt-4 flex flex-row">
-            <a
-              href={liveDemoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-grow text-center text-blue-500 hover:underline portfolio-card__link"
-            >
-              View Live Demo
-            </a>
-            <a
-              href={githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-grow text-center text-blue-500 hover:underline portfolio-card__link"
-            >
-              GitHub Repository
-            </a>
+
+          {/* Links */}
+          <div className="flex gap-3 pt-1">
+            {liveDemoLink && (
+              <a
+                href={liveDemoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition-colors duration-200"
+              >
+                <FiExternalLink className="w-4 h-4" />
+                Live Demo
+              </a>
+            )}
+            {githubLink && (
+              <a
+                href={githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-lg border border-gray-300 dark:border-white/20 text-gray-700 dark:text-white/80 hover:bg-gray-100 dark:hover:bg-white/10 transition-colors duration-200"
+              >
+                <FiGithub className="w-4 h-4" />
+                GitHub
+              </a>
+            )}
           </div>
         </div>
-      </section>
+      </div>
     </motion.div>
   );
 };

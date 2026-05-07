@@ -8,6 +8,7 @@ import datalensImg from '@/public/datalens.png';
 import wishlishlyImg from '@/public/wishlishly.png';
 import reUniqueImg from '@/public/re-unique.png';
 import mollifyImg from '@/public/mollify.png';
+import replyoImg from '@/public/replyo.png';
 
 export const links = [
   {
@@ -70,7 +71,7 @@ export const projectsData = [
       'A bold product marketing site for a probiotic soda brand. Built with Next.js and powered by Prismic CMS. Features product showcases, flavor browsing, subscription pricing, and a vibrant design system that perfectly matches the brand identity.',
     tags: ['Next.js', 'Prismic CMS', 'TypeScript', 'E-Commerce'],
     imageUrl: frvFroovaImg,
-    liveDemoLink: 'https://frv-froova.vercel.app/',
+    liveDemoLink: 'https://frv.vercel.app/',
     githubLink: 'https://github.com/Ousman37/frv-froova',
   },
   {
@@ -85,11 +86,20 @@ export const projectsData = [
   {
     title: 'Wishlishly — iOS Wishlist App',
     description:
-      'A native iOS app built with Flutter that lets users create, organize, and share wishlists with friends and family. Features a clean UI, real-time list sharing, and a seamless experience across devices. Currently pending Apple App Store review.',
+      'A native iOS app built with Flutter that lets users create, organize, and share wishlists with friends and family. Features a clean UI, real-time list sharing, and a seamless cross-device experience. Live on the Apple App Store.',
     tags: ['Flutter', 'iOS', 'Dart', 'App Store'],
     imageUrl: wishlishlyImg,
-    liveDemoLink: 'https://github.com/Ousman37/wishlishly',
-    githubLink: 'git@github.com:Ousman37/wishlist-app.git',
+    liveDemoLink: 'https://apps.apple.com/no/app/wishly-wishlist-gifts/id6755959823',
+    githubLink: 'https://github.com/Ousman37/wishlishly',
+  },
+  {
+    title: 'Replyo — AI Chat Assistant for Business',
+    description:
+      'A production-ready SaaS landing page for an AI-powered customer support and booking assistant. Built with Next.js, TypeScript, and Tailwind CSS — featuring a responsive UI, animated chat demo, pricing tiers, and multi-language support. Designed for restaurants, clinics, and service businesses.',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'AI', 'SaaS'],
+    imageUrl: replyoImg,
+    liveDemoLink: 'https://replyo-eta.vercel.app/',
+    githubLink: '',
   },
   {
     title: 'Mollify — Open-Source Learning Platform',
